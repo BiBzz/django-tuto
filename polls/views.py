@@ -8,17 +8,17 @@ from .models import Question, Choice
 
 class IndexView(generic.ListView):
 	template_name = 'polls/index.html'
-	context_object_name = 'latest questions list'
+	context_object_name = 'latest_questions_list'
 	
 	def get_queryset(self):
 		return Question.objects.order_by('-pub_date')[:5]
 	
 class DetailsView(generic.DetailView):
-	models = Question
+	model = Question
 	template_name = 'polls/details.html'
 
 class ResultsView(generic.DetailView):
-	models = Question
+	model = Question
 	template_name = 'polls/results.html'
 
 def vote(request, question_id):
