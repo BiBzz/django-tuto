@@ -7,3 +7,11 @@ local_settings.py
 .env
 env
 db.sqlite3
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
